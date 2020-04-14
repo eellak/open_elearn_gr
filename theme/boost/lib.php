@@ -156,3 +156,7 @@ function theme_boost_get_pre_scss($theme) {
 
     return $scss;
 }
+
+function theme_boost_page_init(moodle_page $page) {
+    $page->requires->jquery();
+}

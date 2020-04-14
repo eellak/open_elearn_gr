@@ -3296,10 +3296,10 @@ EOD;
         $loginurl = get_login_url();
         // If not logged in, show the typical not-logged-in string.
         if (!isloggedin()) {
-            $returnstr = get_string('loggedinnot', 'moodle');
-            if (!$loginpage) {
-                $returnstr .= " (<a href=\"$loginurl\">" . get_string('login') . '</a>)';
-            }
+            // $returnstr = get_string('loggedinnot', 'moodle');
+            // if (!$loginpage) {
+            //     $returnstr .= " (<a href=\"$loginurl\">" . get_string('login') . '</a>)';
+            // }
             return html_writer::div(
                 html_writer::span(
                     $returnstr,
@@ -3312,9 +3312,9 @@ EOD;
 
         // If logged in as a guest user, show a string to that effect.
         if (isguestuser()) {
-            $returnstr = get_string('loggedinasguest');
+            //$returnstr = get_string('loggedinasguest');
             if (!$loginpage && $withlinks) {
-                $returnstr .= " (<a href=\"$loginurl\">".get_string('login').'</a>)';
+                //$returnstr .= " (<a href=\"$loginurl\">".get_string('login').'</a>)';
             }
 
             return html_writer::div(

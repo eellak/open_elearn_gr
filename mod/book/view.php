@@ -211,13 +211,38 @@ book_view($book, $chapter, $islastchapter, $course, $cm, $context);
 // =====================================================
 
 echo $OUTPUT->header();
+
+echo "<div class=\"top_toc\">";
+if ($previd) {
+    $navprev = get_string('navprev', 'book');
+    echo '<a title="' . $navprevtitle . '" class="bookprev" href="view.php?id=' .$cm->id . '&amp;chapterid=' . $previd .  '">' .$OUTPUT->pix_icon($navprevicon, $navprevtitle, 'mod_book') . '</a>';
+}else{
+
+}
+echo '<select onchange="location = this.value;">';
+
+foreach ($chapters as $ch) {
+    if($chapter->id == $ch->id){
+        echo "<option value=\"view.php?id=$cm->id&amp;chapterid=$ch->id\" selected>".book_get_chapter_title($ch->id, $chapters, $book, $context)."</option>";
+    }else{
+        echo "<option value=\"view.php?id=$cm->id&amp;chapterid=$ch->id\" >".book_get_chapter_title($ch->id, $chapters, $book, $context)."</option>";
+    }
+}
+echo '</select>';
+if ($nextid) {
+    $navnext = get_string('navnext', 'book');
+    echo '<a title="' . $navnexttitle . '" class="booknext" href="view.php?id=' .$cm->id . '&amp;chapterid='.$nextid.'">' .$OUTPUT->pix_icon($navnexticon, $navnexttitle, 'mod_book') . '</a>';
+}else{
+    $navexit = get_string('navexit', 'book');
+    echo '<a title="' . $navexit . '" class="bookexit"  href="'.$returnurl.'">'.$OUTPUT->pix_icon('nav_exit', $navexit, 'mod_book') . '</a>';
+}
+echo "</div>";
 echo $OUTPUT->heading(format_string($book->name));
 
 // Info box.
 if ($book->intro) {
     echo $OUTPUT->box(format_module_intro('book', $book, $cm->id), 'generalbox', 'intro');
 }
-
 $navclasses = book_get_nav_classes();
 
 if ($book->navstyle) {
@@ -227,6 +252,7 @@ if ($book->navstyle) {
 
 // The chapter itself.
 $hidden = $chapter->hidden ? ' dimmed_text' : null;
+
 echo $OUTPUT->box_start('generalbox book_content' . $hidden);
 
 if (!$book->customtitles) {

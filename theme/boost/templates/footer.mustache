@@ -17,25 +17,132 @@
 {{!
     Page footer.
 }}
-<footer id="page-footer" class="py-3 bg-dark text-light">
-    <div class="container">
-        <div id="course-footer">{{{ output.course_footer }}}</div>
-
-        {{# output.page_doc_link }}
-            <p class="helplink">{{{ output.page_doc_link }}}</p>
-        {{/ output.page_doc_link }}
-
-        {{{ output.login_info }}}
-        <div class="tool_usertours-resettourcontainer"></div>
-        {{{ output.home_link }}}
-        <nav class="nav navbar-nav d-md-none" aria-label="{{#str}}custommenu, admin{{/str}}">
-            {{# output.custom_menu_flat }}
-                <ul class="list-unstyled pt-3">
-                    {{> theme_boost/custom_menu_footer }}
-                </ul>
-            {{/ output.custom_menu_flat }}
-        </nav>
-        {{{ output.standard_footer_html }}}
-        {{{ output.standard_end_of_body_html }}}
+{{! <footer id="page-footer" class="py-3 bg-dark text-light"> }}
+  <div class="MuiGrid-root MuiGrid-container">
+        <header
+            class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary jss215 MuiPaper-elevation4">
+            <div class="MuiGrid-root MuiGrid-container">
+                <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12">
+                        {{! output.standard_footer_html }}
+                        
+                    <p class="MuiTypography-root jss217 MuiTypography-body2">Υλοποίηση
+                        από το <a href="https://grnet.gr" target="_blank" rel="noopener noreferrer">ΕΔΥΤΕ</a> με
+                        χρήση <a href="https://mathe.ellak.gr/" target="_blank" rel="noopener noreferrer">Ανοικτού
+                            Λογισμικού</a></p>
+                </div>
+            </div>                   
+        </header>
     </div>
-</footer>
+{{! </footer> }}
+
+
+<div id="mathe_modal" class="modal" tabindex="-1" role="dialog" style="z-index:9999">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="       border-radius: 10px; max-height: 100vh; overflow-y: scroll;">
+      <div class="modal-header">
+        <h5 class="modal-title">Επιμορφωτική Πύλη Ψηφιακών Υπηρεσιών</h5>
+        <button type="button" class="close modal_close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Η Επιμορφωτική Πύλη mathe.gov.gr αποτελεί το κεντρικό σημείο εκπαίδευσης και υποστήριξης των  πολιτών στη χρήση ψηφιακών υπηρεσιών της δημόσιας διοίκησης που παρέχονται από την <b>Ενιαία Ψηφιακή Πύλη</b> <a href="https://www.gov.gr/">gov.gr</a>.</p>
+        <p>Η υποστήριξη αυτή γίνεται με εύκολο, γρήγορο και φιλικό τρόπο, ούτως ώστε η επιμόρφωση να είναι ταχύρρυθμη και ταυτόχρονα αποτελεσματική. Προστίθενται σε τακτική βάση μαθήματα και λοιπό υποστηρικτικό υλικό (π.χ. βίντεο), ως αναλυτικοί οδηγοί χρήσης, για επιλεγμένες και δημοφιλείς ψηφιακές υπηρεσίες.</p>
+        <p>Στόχο έχει να ενδυναμώσει την ψηφιακή ικανότητα των πολιτών ως προς την ορθή και αποτελεσματική χρήση των ψηφιακών υπηρεσιών, η οποία άλλωστε αποτελεί βασικό κριτήριο αξιολόγησης της χώρας στο δείκτη DESI. Η απόκτηση ψηφιακών δεξιοτήτων από το ανθρώπινο δυναμικό αποτελεί βασική προϋπόθεση για την επιτυχή εκβαση του ψηφιακού μετασχηματισμού της χώρας. Επιπρόσθετα, λόγω της αξιοποίησης σύγχρονων και ασύγχρονων εργαλείων εκπαίδευσης, η Επιμορφωτική Πύλη προσφέρει σημαντικές οικονομίες κλίμακας σε υποδομές και ανθρώπινο δυναμικό.</p>
+        <p>Το gov.gr θα εξελίσσεται συνεχώς. Σε πρώτη φάση, λειτουργεί ως κατάλογος υπηρεσιών, ενώ παρέχονται απευθείας οι νέες ηλεκτρονικές υπηρεσίες της υπεύθυνης δήλωσης, της εξουσιοδότησης και της άυλης συνταγογράφησης.</p>
+        <p>Στην ολοκληρωμένη του μορφή το gov.gr θα αποτελέσει το μοναδικό σημείο ψηφιακής εξυπηρέτησης των πολιτών και επιχειρήσεων που συναλλάσσονται με το δημόσιο.</p>
+     </div>
+    </div>
+  </div>
+</div>
+
+<div id="gov_modal" class="modal" tabindex="-1" role="dialog" style="z-index:9999">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="       border-radius: 10px; max-height: 100vh; overflow-y: scroll;">
+      <div class="modal-header">
+        <h5 class="modal-title">Ενιαία Ψηφιακή Πύλη gov.gr</h5>
+        <button type="button" class="close modal_close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Το gov.gr είναι η νέα Ενιαία Ψηφιακή Πύλη της δημόσιας διοίκησης, όπου πολίτες και επιχειρήσεις μπορούν να βρουν τις ψηφιακές υπηρεσίες που θέλουν εύκολα και γρήγορα.</p>
+        <p>Το gov.gr έχει σχεδιαστεί έχοντας στο μυαλό τις ανάγκες των πολιτών και των επιχειρήσεων. Ενοποιεί τη δομή και τη φιλοσοφία των υπηρεσιών ώστε το δημόσιο να αποκτήσει ένα ενιαίο και πιο φιλικό πρόσωπο προς τον πολίτη. Οι υπηρεσίες παρουσιάζονται με βάση «γεγονότα ζωής», δηλαδή με βάση τις ανάγκες του ίδιου του πολίτη και όχι την εσωστρεφή οπτική και δομή των δημοσίων φορέων. Στόχος είναι οι πολίτες και οι επιχειρήσεις να μπορούν να βρουν την υπηρεσία που θέλουν με έως 3 clicks, ενώ επιπρόσθετα παρέχεται λειτουργία αναζήτησης για γρήγορη εύρεση αποτελεσμάτων.</p>
+
+        <p>Το gov.gr θα εξελίσσεται συνεχώς.</p>
+        <p>Σε πρώτη φάση, λειτουργεί ως κατάλογος υπηρεσιών, ενώ παρέχονται απευθείας οι νέες ηλεκτρονικές υπηρεσίες της υπεύθυνης δήλωσης, της εξουσιοδότησης και της άυλης συνταγογράφησης.</p>
+        <p>Στην ολοκληρωμένη του μορφή, θα αποτελέσει το μοναδικό σημείο ψηφιακής εξυπηρέτησης των πολιτών και επιχειρήσεων που συναλλάσσονται με το δημόσιο.</p>
+
+     </div>
+    </div>
+  </div>
+</div>
+<script>
+
+
+$(document).ready(function () {
+    $("#about_modal").on("click", function(event){
+        $("#mathe_modal").modal("show")
+    })
+    $(".modal_close").on("click", function(event){
+        $("#mathe_modal").modal("hide")
+        $("#gov_modal").modal("hide")  
+    })
+    $("#govtrigger").on("click", function(event){
+        $("#gov_modal").modal("show")
+    })
+})
+
+
+var isInViewport = function (elem) {
+    var bounding = elem.getBoundingClientRect();
+    return (
+        bounding.top >= 0 &&
+        bounding.left >= 0 &&
+        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+};
+
+var scrollObject = {};
+window.onscroll = getScrollPosition;
+
+function getScrollPosition(){
+    let view_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+
+    if(view_width < 768){
+        var div = document.querySelector('.test_dim');
+        var top_toc = document.querySelector('.top_toc')
+        var main = document.querySelector('#region-main')
+        scrollObject = {
+            x: window.pageXOffset,
+            y: window.pageYOffset
+        }
+
+        if(scrollObject.y > div.offsetHeight+150) {
+            div.classList.add("fixed-top")
+            top_toc.classList.add("top_toc_sticky")
+            main.style["padding-top"] = "150px"
+        } else {
+            div.classList.remove("fixed-top")
+            main.style["padding-top"] = "0px"
+            top_toc.classList.remove("top_toc_sticky")
+        }
+    }
+    
+}
+
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-68685720-6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-68685720-6');
+</script>
+
+
+{{{ output.standard_end_of_body_html }}}

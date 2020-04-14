@@ -17,44 +17,56 @@
 {{!
     Page navbar.
 }}
-<nav class="fixed-top navbar navbar-light bg-white navbar-expand moodle-has-zindex" aria-label="{{#str}}sitemenubar, admin{{/str}}">
+<div class="test_dim">
+    <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-12">
+        <header class="top_header MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiHeader-root MuiPaper-elevation4">
+            <div class="MuiContainer-root MuiContainer-maxWidthLg">
+                <div class="MuiToolbar-root MuiToolbar-dense MuiHeader-toolbar">
+                    <div
+                        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-align-items-xs-center">
+                        <div class="MuiGrid-root MuiGrid-item" style="display: flex; align-items: center;"><a
+                                href="https://gov.gr" style="align-items: center; display: flex;"><img
+                                    src="/theme/boost/pix/govgr_white.svg" height="50"></a></div>
+                        <div class="MuiGrid-root MuiHeaderTitle-grid MuiGrid-item MuiGrid-grid-xs-auto"><a
+                                class="MuiButtonBase-root MuiHeaderTitle-link MuiBaseLink-root" tabindex="0"
+                                role="button" aria-disabled="false" href="/">
+                                <h3 class="main_header_logo MuiHeaderTitle-root MuiDigigovTitle-root MuiDigigovTitle-md">Επιμορφωτική Πύλη Ψηφιακών Υπηρεσιών</h3>
+                            </a></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="MuiHeader-coloredBar"></div>
+    </div>
+    <nav class="navbar navbar-light bg-white navbar-expand moodle-has-zindex" aria-label="{{#str}}sitemenubar, admin{{/str}}">
 
-        <div data-region="drawer-toggle" class="d-inline-block mr-3">
-            <button aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}" aria-controls="nav-drawer" type="button" class="btn nav-link float-sm-left mr-1 btn-light bg-gray" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav">{{#pix}}i/menubars{{/pix}}<span class="sr-only">{{#str}}sidepanel, core{{/str}}</span></button>
-        </div>
+            <div data-region="drawer-toggle" class="d-inline-block mr-3">
+                <button aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}" aria-controls="nav-drawer" type="button" class="btn nav-link float-sm-left mr-1 btn-light btn-toggle-dark" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav">{{#pix}}i/menubars{{/pix}}<span class="sr-only">{{#str}}sidepanel, core{{/str}}</span></button>
+            </div>
 
-        <a href="{{{ config.wwwroot }}}" class="navbar-brand {{# output.should_display_navbar_logo }}has-logo{{/ output.should_display_navbar_logo }}
-            {{^ output.should_display_navbar_logo }}
-                d-none d-sm-inline
-            {{/ output.should_display_navbar_logo }}
-                ">
-            {{# output.should_display_navbar_logo }}
-                <span class="logo d-none d-sm-inline">
-                    <img src="{{output.get_compact_logo_url}}" alt="{{sitename}}">
-                </span>
-            {{/ output.should_display_navbar_logo }}
-            <span class="site-name d-none d-md-inline">{{{ sitename }}}</span>
-        </a>
+            
 
-        <ul class="navbar-nav d-none d-md-flex">
-            <!-- custom_menu -->
-            {{{ output.custom_menu }}}
-            <!-- page_heading_menu -->
-            {{{ output.page_heading_menu }}}
-        </ul>
-        <ul class="nav navbar-nav ml-auto">
-            <li class="d-none d-lg-block">
-                {{{ output.search_box }}}
-            </li>
-            <!-- navbar_plugin_output -->
-            <li class="nav-item">
-                {{{ output.navbar_plugin_output }}}
-            </li>
-            <!-- user_menu -->
-            <li class="nav-item d-flex align-items-center">
-                {{{ output.user_menu }}}
-            </li>
-        </ul>
-        <!-- search_box -->
-</nav>
+            <ul class="navbar-nav d-none d-md-flex">
+                <!-- custom_menu -->
+                {{{ output.custom_menu }}}
+                <!-- page_heading_menu -->
+                {{{ output.page_heading_menu }}}
+            </ul>
+            <div style="font-size: 1.4rem;"><div class="line_separator"><span class="light_blue_text">ΜΑΘΕ</span> <span class="dark_blue_text">ΤΟ GOV.GR</span></div></div>
 
+
+            <ul class="nav navbar-nav ml-auto">
+
+                <!-- user_menu -->
+                <li class="nav-item d-flex align-items-center">
+                    {{{ output.user_menu }}}
+                </li>
+            </ul>
+            <!-- search_box -->
+    </nav>
+    <div class="about_modal_area">
+            <span id="about_modal">Τι είναι το mathe.gov.gr <i class="fa fa-star light_blue_text"></i></span>
+    </div>
+    
+    {{> theme_boost/nav-drawer }}
+</div>

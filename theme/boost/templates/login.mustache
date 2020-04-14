@@ -34,6 +34,27 @@
 <body {{{ bodyattributes }}}>
 {{> core/local/toast/wrapper}}
 
+    <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-12">
+        <header class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiHeader-root MuiPaper-elevation4">
+            <div class="MuiContainer-root MuiContainer-maxWidthLg">
+                <div class="MuiToolbar-root MuiToolbar-dense MuiHeader-toolbar">
+                    <div
+                        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-align-items-xs-center">
+                        <div class="MuiGrid-root MuiGrid-item" style="display: flex; align-items: center;"><a
+                                href="https://gov.gr" style="align-items: center; display: flex;"><img
+                                    src="/theme/boost/pix/govgr_white.svg" height="50"></a></div>
+                        <div class="MuiGrid-root MuiHeaderTitle-grid MuiGrid-item MuiGrid-grid-xs-auto"><a
+                                class="MuiButtonBase-root MuiHeaderTitle-link MuiBaseLink-root" tabindex="0"
+                                role="button" aria-disabled="false" href="/">
+                                <h3 class="main_header_logo MuiHeaderTitle-root MuiDigigovTitle-root MuiDigigovTitle-md">Επιμορφωτική Πύλη Ψηφιακών Υπηρεσιών</h3>
+                            </a></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="MuiHeader-coloredBar"></div>
+    </div>
+
 <div id="page-wrapper">
 
     {{{ output.standard_top_of_body_html }}}
@@ -49,20 +70,7 @@
             </div>
         </div>
     </div>
-    <footer id="page-footer" class="py-3 bg-dark text-light">
-        <div class="container">
-            <div id="course-footer">{{{ output.course_footer }}}</div>
-
-            {{# output.page_doc_link }}
-                <p class="helplink">{{{ output.page_doc_link }}}</p>
-            {{/ output.page_doc_link }}
-
-            {{{ output.login_info }}}
-            {{{ output.home_link }}}
-            {{{ output.standard_footer_html }}}
-            {{{ output.standard_end_of_body_html }}}
-        </div>
-    </footer>
+    {{> theme_boost/footer }}
 </div>
 
 </body>
