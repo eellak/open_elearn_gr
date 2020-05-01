@@ -111,7 +111,7 @@ function getScrollPosition(){
     let view_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
 
     if(view_width < 768){
-        var div = document.querySelector('.test_dim');
+        var div = document.querySelector('.static_top');
         var top_toc = document.querySelector('.top_toc')
         var main = document.querySelector('#region-main')
         scrollObject = {
@@ -121,12 +121,16 @@ function getScrollPosition(){
 
         if(scrollObject.y > div.offsetHeight+150) {
             div.classList.add("fixed-top")
-            top_toc.classList.add("top_toc_sticky")
+            //top_toc.classList.add("top_toc_sticky")
             main.style["padding-top"] = "150px"
+            $(".top_header").hide()
+            $(".about_modal_area").hide()
         } else {
+            $(".top_header").show()
+            $(".about_modal_area").show()
             div.classList.remove("fixed-top")
             main.style["padding-top"] = "0px"
-            top_toc.classList.remove("top_toc_sticky")
+            //top_toc.classList.remove("top_toc_sticky")
         }
     }
     

@@ -194,7 +194,7 @@ function book_add_fake_block($chapters, $chapter, $book, $cm, $edit = null) {
     $bc->content = $toc;
 
     $defaultregion = $PAGE->blocks->get_default_region();
-    $PAGE->blocks->add_fake_block($bc, $defaultregion);
+    //$PAGE->blocks->add_fake_block($bc, $defaultregion);
 }
 
 /**

@@ -1406,3 +1406,17 @@ li a[data-key="calendar"]{
     padding-left:125px;
     background-color: white;;
   }
+
+  #page{
+    padding-right: 0px ;
+    padding-left: 0px ;
+  }
+
+  @media screen and (max-width: 992px) {
+    #page{
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+
+  

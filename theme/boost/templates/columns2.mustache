@@ -52,47 +52,69 @@
 
 <body {{{ bodyattributes }}}>
 {{> core/local/toast/wrapper}}
-
-<div id="page-wrapper" class="d-print-block">
-
-    {{{ output.standard_top_of_body_html }}}
-
-    {{> theme_boost/navbar }}
-    
-    {{{ output.full_header }}}
-    
-    <div id="page" class="container-fluid d-print-block">
-
-        <div id="page-content" class="row pb-3 d-print-block">
-            <div id="region-main-box" class="col-12">
-                {{#hasregionmainsettingsmenu}}
-                <div id="region-main-settings-menu" class="d-print-none {{#hasblocks}}has-blocks{{/hasblocks}}">
-                    <div> {{{ output.region_main_settings_menu }}} </div>
+    <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-12">
+        <header class="top_header MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiHeader-root MuiPaper-elevation4">
+            <div class="MuiContainer-root MuiContainer-maxWidthLg">
+                <div class="MuiToolbar-root MuiToolbar-dense MuiHeader-toolbar">
+                    <div
+                        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-align-items-xs-center">
+                        <div class="MuiGrid-root MuiGrid-item" style="display: flex; align-items: center;"><a
+                                href="https://gov.gr" style="align-items: center; display: flex;"><img
+                                    src="{{{ config.wwwroot }}}/theme/boost/pix/govgr_white.svg" height="50"></a></div>
+                        <div class="MuiGrid-root MuiHeaderTitle-grid MuiGrid-item MuiGrid-grid-xs-auto"><a
+                                class="MuiButtonBase-root MuiHeaderTitle-link MuiBaseLink-root" tabindex="0"
+                                role="button" aria-disabled="false" href="{{{ config.wwwroot }}}/?redirect=0">
+                                <h3 class="main_header_logo MuiHeaderTitle-root MuiDigigovTitle-root MuiDigigovTitle-md">Επιμορφωτική Πύλη Ψηφιακών Υπηρεσιών</h3>
+                            </a></div>
+                    </div>
                 </div>
-                {{/hasregionmainsettingsmenu}}
-                <section id="region-main" {{#hasblocks}}class="has-blocks mb-3"{{/hasblocks}} aria-label="{{#str}}content{{/str}}">
-
-                    {{#hasregionmainsettingsmenu}}
-                        <div class="region_main_settings_menu_proxy"></div>
-                    {{/hasregionmainsettingsmenu}}
-                    {{{ output.course_content_header }}}
-                    {{{ output.main_content }}}
-                    {{{ output.activity_navigation }}}
-                    {{{ output.course_content_footer }}}
-
-                </section>
-                {{#hasblocks}}
-                <section data-region="blocks-column" class="d-print-none" aria-label="{{#str}}blocks{{/str}}">
-                    {{{ sidepreblocks }}}
-                </section>
-                {{/hasblocks}}
             </div>
-        </div>
+        </header>
+        <div class="MuiHeader-coloredBar"></div>
     </div>
-    {{{ output.standard_after_main_region_html }}}
-    {{> theme_boost/footer }}
-</div>
+    <div class="MuiContainer-root MuiContainer-maxWidthLg" style="padding-left: 0px; padding-right: 0px;">
+        <div id="page-wrapper" class="d-print-block">
 
+            {{{ output.standard_top_of_body_html }}}
+
+            {{> theme_boost/navbar }}
+            
+            {{{ output.full_header }}}
+            
+            <div id="page" class="container-fluid d-print-block" style="margin-top: 25px !important;">
+                
+                <div id="page-content" class="row pb-3 d-print-block">
+                    <div id="region-main-box" class="col-12">
+                        {{#hasregionmainsettingsmenu}}
+                        <div id="region-main-settings-menu" class="d-print-none {{#hasblocks}}has-blocks{{/hasblocks}}">
+                            <div> {{{ output.region_main_settings_menu }}} </div>
+                        </div>
+                        {{/hasregionmainsettingsmenu}}
+                        <section id="region-main" {{#hasblocks}}class="has-blocks mb-3"{{/hasblocks}} aria-label="{{#str}}content{{/str}}">
+
+                            {{#hasregionmainsettingsmenu}}
+                                <div class="region_main_settings_menu_proxy"></div>
+                            {{/hasregionmainsettingsmenu}}
+                            {{{ output.course_content_header }}}
+                            {{{ output.main_content }}}
+                            {{{ output.activity_navigation }}}
+                            {{{ output.course_content_footer }}}
+
+                        </section>
+                        {{#hasblocks}}
+                        <section data-region="blocks-column" class="d-print-none" aria-label="{{#str}}blocks{{/str}}">
+                            {{{ sidepreblocks }}}
+                        </section>
+                        {{/hasblocks}}
+                    </div>
+                </div>
+            </div>
+            {{{ output.standard_after_main_region_html }}}
+            
+        </div>
+        
+    </div>
+    {{> theme_boost/footer }}
 </body>
 </html>
 {{#js}}
